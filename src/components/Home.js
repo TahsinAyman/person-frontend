@@ -1,77 +1,30 @@
 import {React, Component} from "react";
-import config from "../config"
-import ReactDOM from "react-dom/client";
-
+import icon from "./static/icon.png"
 
 class Home extends Component {
-    constructor() {
-        super();
-        this.search = this.search.bind(this);
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = function() {
-            const data = JSON.parse(this.responseText);
-            const result = ReactDOM.createRoot(document.getElementById("table"));
-            result.render(
-                data.map(function(i) {
-                    return (
-                        <tr>
-                            <th scope="row">{i.id}</th>
-                            <td>{i.name}</td>
-                            <td>{i.age}</td>
-                        </tr>
-                    )
-                })
-            )
-        }
-        xhttp.open("GET", `${config.url}/person/show/`);
-        xhttp.send();
-    }
-
-    search(event) {
-        event.preventDefault();
-        const search = event.target.search.value;
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = function() {
-            const data = JSON.parse(this.responseText);
-            console.log(data);
-            const result = ReactDOM.createRoot(document.getElementById("table"));
-            result.render(
-                data.map(function(i) {
-                    return (
-                        <tr>
-                            <th scope="row">{i.id}</th>
-                            <td>{i.name}</td>
-                            <td>{i.age}</td>
-                        </tr>
-                    )
-                })
-            )
-        }
-        xhttp.open("GET", `${config.url}/person/show/query/name/${search}`)
-        xhttp.send();
-    }
-
     render() {
         return (
             <div>
-                <form action="#" onSubmit={this.search}>
-                    <input type="search" class="form-control" name="search" placeholder="Search"/>
-                    <input type="submit" class="btn btn-primary" value="Search"/>
-                    <br />
-                    <br />
-                </form>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Age</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table">
-
-                    </tbody>
-                </table>
+                <div class="col">
+                    <img class="img-responsive center-block d-block mx-auto" src={icon}/>
+                </div>
+                <p>
+                This is a Sample CRUD Exaple using Flask as a Backend and React.JS Application in Frontend.
+                <br />
+                The Source Code Can be Found at Github:  
+                <br /> 
+                <a href="https://github.com/TahsinAyman/person-frontend.git">Frontend</a>
+                <br />
+                <a href="https://github.com/TahsinAyman/personBackend.git">Backend</a>
+                <br />
+                The Steps Of Running this Whole Application will be at both README.md
+                <br />
+                Make Sure to Run The Backend and then The Frontend
+                <br />
+                The Database Used in Backend is SQLITE Database For Tests.
+                <br />
+                If you are a Programmer You Can change in the Backend Source Code and Change the SQLITE to MYSQL OR POSTGRESQL.
+                </p>
             </div>
         )
     }
