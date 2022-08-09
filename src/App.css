@@ -1,6 +1,11 @@
-img {
-  font-size: 20%;
+.product-holder {
+  position: relative;
+  display: block;
 }
-* {
-  font-size: 110%;
+.plus-image {
+  left: 20%;
+  top: 50%;
+  position: absolute;
+  margin-top: -25px;
+  margin-left: -25px;
 }

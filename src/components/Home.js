@@ -1,30 +1,35 @@
 import {React, Component} from "react";
-import icon from "./static/icon.png"
+import Education from "./Education";
+import Scout from "./Scout";
+import About from "./About";
+import Certificates from "./Certificates";
+import Projects from "./Projects";
 
 class Home extends Component {
     render() {
         return (
             <div>
-                <div class="col">
-                    <img class="img-responsive center-block d-block mx-auto" src={icon}/>
+                <About />
+                <hr />
+                <Education /> 
+                <hr />
+                <br />
+                <br />
+                <h1>Certificates</h1>
+                <br />
+                <br />
+                <div class="row">
+                    <Certificates />
                 </div>
-                <p>
-                This is a Sample CRUD Exaple using Flask as a Backend and React.JS Application in Frontend.
+                <hr />
+                <Scout />
+                <hr />
                 <br />
-                The Source Code Can be Found at Github:  
-                <br /> 
-                <a href="https://github.com/TahsinAyman/person-frontend.git">Frontend</a>
                 <br />
-                <a href="https://github.com/TahsinAyman/personBackend.git">Backend</a>
+                <h1>Projects</h1>
                 <br />
-                The Steps Of Running this Whole Application will be at both README.md
                 <br />
-                Make Sure to Run The Backend and then The Frontend
-                <br />
-                The Database Used in Backend is SQLITE Database For Tests.
-                <br />
-                If you are a Programmer You Can change in the Backend Source Code and Change the SQLITE to MYSQL OR POSTGRESQL.
-                </p>
+                <Projects />
             </div>
         )
     }

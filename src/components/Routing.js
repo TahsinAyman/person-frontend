@@ -1,11 +1,12 @@
 import {React, Component} from "react";
 import {Route, Routes, BrowserRouter as Router} from "react-router-dom"
-import FetchRecords from "./FetchRecord"
 import UrlError from "./UrlError"
-import AddRecord from "./AddRecord";
-import DeleteRecord from "./DeleteRecord";
-import UpdateRecord from "./UpdateRecord"
 import Home from "./Home"
+import Education from "./Education";
+import Certificates from "./Certificates";
+import Scout from "./Scout";
+import About from "./About";
+import Projects from "./Projects"
 
 
 class Routing extends Component {
@@ -14,10 +15,11 @@ class Routing extends Component {
             <Router>
                 <Routes>
                     <Route path="/" element={<Home />}/>
-                    <Route path="/fetch/" element={<FetchRecords />}/>
-                    <Route path="/add/" element={<AddRecord />} />
-                    <Route path="/delete/" element={<DeleteRecord />} />
-                    <Route path="/update/" element={<UpdateRecord />} />
+                    <Route path="/education/" element={<Education />}/>
+                    <Route path="/certificates/" element={<Certificates />}/>
+                    <Route path="/scout/" element={<Scout />}/>
+                    <Route path="/about/" element={<About />}/>
+                    <Route path="/projects/" element={<Projects />}/>
                     <Route path="/*" element={<UrlError />} />
                 </Routes>
             </Router>
